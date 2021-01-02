@@ -71,3 +71,29 @@ export function lazyImgload(imgs) {
     }
   }
 }
+
+// function wait(ms) {
+//   return new Promise((resolve) => setTimeout(resolve, ms));
+// }
+
+// export default { wait };
+
+// export const mixins = {
+//   methods: {
+//     wait(ms) {
+//       return new Promise((resolve) => setTimeout(resolve, ms));
+//     },
+//   },
+// };
+
+function wait(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+const plugin = {
+  install: function(Vue) {
+    Vue.prototype.$wait = wait;
+  },
+};
+
+export default plugin;

@@ -1,7 +1,7 @@
 <template>
   <div class="music" ref="music" v-if="musiclist!==null">
     <div class="avatar">
-      <img data-src="musiclist[0].pic" alt />
+      <img :src="image" alt />
     </div>
     <table cellspacing="0">
       <div class="header">{{musiclist['head']}}</div>
@@ -37,7 +37,18 @@ import { playMixin } from 'views/musicListDetail/playMixin'
 export default {
   name: 'ArtistAlbumnItem',
   mixins: [tableMixin, playMixin],
-  props: ['musiclist', 'header']
+  props: ['musiclist', 'header'],
+  data() {
+    return {
+      image: null
+    }
+  },
+  watch: {
+    musiclist(newvalue, oldvalue) {
+      this.image = newvalue[0].pic
+    }
+    // this.image = musiclist[0].pic
+  }
 }
 </script>
 

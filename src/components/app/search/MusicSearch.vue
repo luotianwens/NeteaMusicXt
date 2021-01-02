@@ -69,9 +69,7 @@ export default {
       this.getSugMess(newvalue)
     },
     isShow() {
-      setTimeout(() => {
-        this.$refs.hotsearch.refresh()
-      }, 200)
+      this.$wait(200).then(() => this.$refs.hotsearch.refresh())
     }
   },
   methods: {

@@ -162,9 +162,7 @@ export default {
   },
   watch: {
     isPlayerShow() {
-      setTimeout(() => {
-        this.$refs.player.refresh()
-      }, 500)
+      this.$wait(500).then(() => this.$refs.player.refresh())
     },
     isMusicList() {
       setTimeout(() => {

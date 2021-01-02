@@ -3,7 +3,9 @@
     <scroll ref="wrapper" class="artist-wrapper" @scroll="refresh()" :pull-up-load="true">
       <artist-base-info :desc="artistDesc" :base-info="getArtistBaseInfo" />
       <artist-bar ref="artistBar" />
-      <router-view></router-view>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
     </scroll>
   </div>
 </template>
@@ -23,15 +25,16 @@ export default {
       artistDesc: []
     }
   },
-  mounted() {
+  async mounted() {
     this.artist = this.$store.state.artist
     // console.log(this.artist) //albumSize、musicSize
-    _getArtistDesc(this.artist.id).then(res => {
-      this.artistDesc = res.data.briefDesc
-    })
-    setTimeout(() => {
-      this.$refs.wrapper.refresh()
-    }, 1500)
+    // _getArtistDesc(this.artist.id).then(res => {
+    //   this.artistDesc = res.data.briefDesc
+    // })
+    let data = await _getArtistDesc(this.artist.id)
+    this.artistDesc = data.data.briefDesc
+    // this.artistDesc = await _getArtistDesc(this.artist.id).data.briefDesc
+    this.$wait(1500).then(() => this.$refs.wrapper.refresh())
   },
   components: {
     Scroll,
