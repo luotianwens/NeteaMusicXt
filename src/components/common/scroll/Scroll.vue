@@ -60,9 +60,10 @@ export default {
   },
   watch: {
     data() {
-      setTimeout(() => {
-        this.refresh()
-      }, 2000)
+      // setTimeout(() => {
+      //   this.refresh()
+      // }, 2000)
+      this.$wait(2000).then(() => this.refresh())
     }
   },
   methods: {

@@ -73,14 +73,15 @@ export default {
   },
   mixins: [tableMixin, imgloadMixin, indexMixin],
   created() {
-    setTimeout(() => {
-      this.getTopSongs()
-    }, 2000)
+    this.$wait(2000).then(() => this.getTopSongs())
   },
   mounted() {
-    setTimeout(() => {
+    // setTimeout(() => {
+    //   this.$refs.wrapper.scrollTo(0, -1, 2000)
+    // }, 1000)
+    this.$wait(1000).then(() => {
       this.$refs.wrapper.scrollTo(0, -1, 2000)
-    }, 1000)
+    })
   },
   methods: {
     getTopSongs() {
