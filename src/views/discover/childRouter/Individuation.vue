@@ -2,9 +2,9 @@
   <div class="individuation">
     <scroll ref="wrapper" class="indici-scroll" :data="personalized">
       <swiper :banner="banner" />
-      <div class="recommend-title">
+      <div class="recommend-title" @click="$router.push('/discover/category')">
         <p>推荐歌单</p>
-        <p class="more">更多 ></p>
+        <img class="more" src="~assets/img/app/next.svg" alt />
       </div>
       <music-list :personList="personalized" />
       <!-- <private-content :pri="privateContent" /> -->
@@ -40,8 +40,7 @@ export default {
     _getPersonallized(this.limit).then(
       res => (this.personalized = res.data.result)
     )
-  },
-  methods: {}
+  }
 }
 </script>
 
@@ -63,6 +62,9 @@ export default {
   padding-bottom: 3px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   display: flex;
-  justify-content: space-between;
+}
+
+.more {
+  width: 18px;
 }
 </style>

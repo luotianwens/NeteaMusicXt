@@ -12,6 +12,7 @@
     <div class="content">
       <div class="login" @click="showLogin()">
         <div class="profile">
+          <img v-if="this.$store.state.user === null" src="~assets/img/app/profile-o.svg" alt />
           <img :src="getImage" alt />
         </div>
         <div>{{getUserName}}</div>

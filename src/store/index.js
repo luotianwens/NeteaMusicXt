@@ -12,6 +12,7 @@ const state = {
   playlist: [],
   artist: null,
   isLoading: false,
+  currentIndex: 0, //管理导航点击状态
 };
 
 export default new Vuex.Store({
@@ -39,6 +40,9 @@ export default new Vuex.Store({
     },
     addArtist(state, obj) {
       state.artist = obj;
+    },
+    changeIndex(state, index) {
+      state.currentIndex = index;
     },
   },
   getters: {

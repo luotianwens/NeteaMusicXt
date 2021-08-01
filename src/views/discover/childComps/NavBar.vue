@@ -5,7 +5,7 @@
         <div
           class="item"
           @click="barClick(index)"
-          :class="{action: currentIndex == index}"
+          :class="{action: $store.state.currentIndex == index}"
         >{{item.name}}</div>
       </router-link>
     </div>
@@ -17,13 +17,11 @@ export default {
   name: 'NavBar',
   props: ['list'],
   data() {
-    return {
-      currentIndex: 0
-    }
+    return {}
   },
   methods: {
     barClick(i) {
-      this.currentIndex = i
+      this.$store.commit('changeIndex', i)
     }
   }
 }
