@@ -6,7 +6,7 @@ let ajaxTimer = 0;
 export function request(config) {
   $store.commit('showLoading');
   const install = axios.create({
-    baseURL: 'https://netease-cloud-music-api-nu-red.vercel.app/',
+    baseURL: 'http://1.15.24.13:3000/',
     timeout: 5000,
   });
   install.interceptors.request.use(
