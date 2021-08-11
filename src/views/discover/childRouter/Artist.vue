@@ -60,7 +60,8 @@ export default {
       areaIndex: 0,
       typeIndex: 0,
       page: 1,
-      artists: []
+      artists: [],
+      imgData: {}
     }
   },
   components: {
@@ -70,6 +71,7 @@ export default {
   mixins: [imgloadMixin],
   mounted() {
     this.getArtist()
+    this.imgData = this.$refs.artistlist
   },
   methods: {
     getArtist() {

@@ -65,7 +65,8 @@ export default {
       playIndex: null,
       musiclist: [],
       page: 1,
-      list: []
+      list: [],
+      imgData: {} //图片懒加载数据
     }
   },
   components: {
@@ -73,6 +74,7 @@ export default {
   },
   mixins: [tableMixin, imgloadMixin, indexMixin],
   created() {
+    this.imgData = this
     this.$wait(2000).then(() => this.getTopSongs())
   },
   mounted() {

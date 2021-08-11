@@ -47,6 +47,7 @@ export default {
       subers: []
     }
   },
+
   components: {
     Scroll,
     DetailBaseInfo,

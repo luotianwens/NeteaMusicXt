@@ -22,6 +22,7 @@ const ArtistSimi = () => import('@/views/ArtistDetail/childRouter/ArtistSimi');
 
 const NewSongs = () => import('@/views/discover/childRouter/NewSongs');
 const Musicmv = () => import('@/views/discover/childRouter/Musicmv');
+const MvListDetail = () => import('@/views/mvListDetail/MvListDetail');
 
 Vue.use(VueRouter);
 
@@ -98,6 +99,11 @@ const routes = [
         component: ArtistSimi,
       },
     ],
+  },
+  {
+    path: '/mvlistdetail/:id/:time',
+    name: 'detail',
+    component: MvListDetail,
   },
 ];
 

@@ -71,14 +71,19 @@ export function _getTopMv(limit = 10) {
   });
 }
 
-export function _AllMv(area = '全部', type = '全部', order = '最新', limit) {
+export function _AllMv(
+  area = '全部',
+  type = '全部',
+  order = '最新',
+  limit = 30
+) {
   return request({
     url: '/mv/all',
     params: {
-      area: area,
-      type: type,
-      order: order,
-      limit: limit,
+      area,
+      type,
+      order,
+      limit,
     },
   });
 }

@@ -34,7 +34,10 @@ export default {
     scrollbar: {
       type: Object,
       default() {
-        return {}
+        return {
+          scrollY: true,
+          scrollbar: false
+        }
       }
     },
     listenScroll: {
@@ -73,10 +76,9 @@ export default {
       }
       this.scroll = new BScroll(this.$refs.wrapper, {
         click: true,
-        scrollY: true,
         probeType: this.probeType,
         pullUpLoad: this.pullUpLoad, //上拉加载
-        scrollbar: this.scrollbar,
+        // scrollbar: this.scrollbar,
         mouseWheel: {
           speed: 20,
           invert: false,
