@@ -1,8 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-const TestComps = () => import('views/testcomps/TestComps');
-
 const DiscoverMusic = () => import('@/views/discover/DiscoverMusic');
 const MusicListDetail = () => import('views/musicListDetail/MusicListDetail');
 const SearchList = () => import('views/search/SearchList');
