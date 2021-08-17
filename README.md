@@ -1,5 +1,8 @@
 # neteamusic
 
+## 项目演示地址
+[点击这里](http://1.15.24.13/xiaotian)
+
 ## Project setup
 ```
 yarn install
